@@ -3,6 +3,7 @@ package webserver.realvision.se.webserver;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.os.Environment;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,8 @@ import android.support.v7.widget.ButtonBarLayout;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -42,15 +45,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         Log.d(TAG, "onPause: ");
-        //unbindService(mServiceConnection);
+        unbindService(mServiceConnection);
     }
 
     /**
      * Started web server button pressed
      * */
     public void startServerButtonPressed(final View view) {
+        final File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
         if (mWebServer != null) {
-            mWebServer.start(9090, "", mWebServerLogging);
+            mWebServer.start(null,9090, path.getAbsolutePath(), mWebServerLogging);
         }
     }
 

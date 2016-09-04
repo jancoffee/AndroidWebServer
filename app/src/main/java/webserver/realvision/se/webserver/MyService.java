@@ -10,11 +10,8 @@ import android.util.Log;
 
 public class MyService extends Service {
 
-    public static final String WEBSERVER_START_ACTION = "WEBSERVER_START_ACTION";
-    public static final String WEBSERVER_STOP_ACTION = "WEBSERVER_STOP_ACTION";
     private MyWebServer myWebServer;
     private MyBinder myBinder = new MyBinder();
-    private boolean mWebServerStarted = false;
     private static final String TAG = "MyService";
 
     public MyService() {
