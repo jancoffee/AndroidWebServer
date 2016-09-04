@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
     private MyWebServer mWebServer;
     private Button mStartServerButton;
     private Button mStopServerButton;
+    //FIXME add more info eg listening address and port
+    //FIXME add a button for getting a HTTP head of a file
+    //FIXME enable logging window
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

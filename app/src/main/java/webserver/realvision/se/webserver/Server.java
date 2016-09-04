@@ -1,3 +1,4 @@
+
 package webserver.realvision.se.webserver;
 
 import android.support.annotation.IntRange;
@@ -10,7 +11,9 @@ import java.io.InputStream;
 import java.util.Map;
 
 import fi.iki.elonen.NanoHTTPD;
-
+/**
+ * The actual web server class that is listening for incoming connections and sending responses
+ * */
 public class Server extends NanoHTTPD {
 
     private static final String TAG = "Server";
@@ -91,6 +94,7 @@ public class Server extends NanoHTTPD {
     }
 
     private File openFile(String WWWRoot, String uri) {
+        //FIXME Add support for DASH eg a if audio and video is available both must exist, if just one exists return 404
         String fullFilePath = mWWWRoot + uri;
         File file = new File(fullFilePath);
         return file;

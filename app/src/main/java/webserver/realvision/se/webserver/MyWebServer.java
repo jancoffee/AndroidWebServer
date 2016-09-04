@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
 import fi.iki.elonen.NanoHTTPD;
 
 /**
- * Webserver
+ * Client "interface" for the web server
  */
 public class MyWebServer {
 
